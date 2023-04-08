@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #dde1e7;
+}
+
+.calculadora{
+  width: 320px;
+  height: 450px;
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, auto);
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 3px rgba(94, 104, 121, 0.288);
+  margin-left: 3em;
+}
+
+.number{
+  grid-column: 1/6;
+  padding: 5px;
+  font-size: 18px;
+  color: #000;
+  text-align: right;
+  outline: none;
+  border: none;
+  background-color: #dde1e7;
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 2px 2px 3px rgba(94, 104, 121, 0.288);
+}
+
+.btn{
+  display: grid;
+  place-items: center;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #dde1e7;
+  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 3px rgba(94, 104, 121, 0.288);
+}
+
+.limpar{
+  grid-column: 1/3;
+}
+
+.somar{
+  grid-column: 4/5;
+  grid-row: 4/6;
+}
+
+.btn:focus{
+  color: #22a6b3;
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 2px 2px 3px rgba(94, 104, 121, 0.288);
+
+}
+
+.espaco{
+  grid-column: 1/6;
+}
+
+.info{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.info span{
+  font-weight: bold;
+  color: brown;
+}
+
+.rodape{
+position: relative;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+/* efeito dark */
+
+.btn--dark{
+  height: 20px;
+  width: 40px;
+  background-color: #5372fe;
+  border-radius: 50px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  transition: all .3s linear;
+}
+
+.btn--dark::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  transition: all .3s linear;
+}
+
+.btn--light::after{
+  background-color: #fff;
+  transform: translateX(20px);
+}
+
+.dark{
+  box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
+}
+
+.dark .number{
+  color: #fff;
+  background-color: #272727;
+  box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
+}
+
+.dark .btn{
+  color: #5372fe;
+  background-color: #272727;
+  box-shadow: 2px 2px 5px #141414, -5px -5px 10px #212121;
+}
+
+.dark .btn:focus{
+  box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
+}
+
+.info::after{
+  color: white;
+}

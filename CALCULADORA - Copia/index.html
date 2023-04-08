@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculadora - Atividade Roberio</title>
+</head>
+<body>
+  <div class="btn--dark"></div>
+  <div class="info"><p><span>ATENÇÃO:</span> Para calcular exponenciação entre</br> com a base e o expoente separados por um espaço</p></div>
+  <form name="calc" class="calculadora">
+    <input type="text" name="valor" class="number">
+    <input type="button" value="c" class="limpar btn" onclick="document.calc.valor.value =''">
+    <input type="button" value="*" class="multiplicar btn" onclick="multiplicacao()">
+    <input type="button" value="/" class="dividir btn" onclick="divisao()">
+    <input type="button" value="n!" class="fatorial btn" onclick="fatorial()">
+    <input type="button" value="7" class="7 btn" onclick="document.calc.valor.value +='7'">
+    <input type="button" value="8" class="8 btn" onclick="document.calc.valor.value +='8'">
+    <input type="button" value="9" class="9 btn" onclick="document.calc.valor.value +='9'">
+    <input type="button" value="-" class="subitracao btn" onclick="subtracao()">
+    <input type="button" value="n^" class="exponenciacao btn" onclick="exponenciacao()">
+    <input type="button" value="4" class="4 btn" onclick="document.calc.valor.value +='4'">
+    <input type="button" value="5" class="5 btn" onclick="document.calc.valor.value +='5'">
+    <input type="button" value="6" class="6 btn" onclick="document.calc.valor.value +='6'">
+    <input type="button" value="+" class="somar btn" onclick="soma()">
+    <input type="button" value="&radic;" class="raiz btn" onclick="raizQuadrada()">
+    <input type="button" value="3" class="3 btn" onclick="document.calc.valor.value +='3'">
+    <input type="button" value="2" class="2 btn" onclick="document.calc.valor.value +='2'">
+    <input type="button" value="1" class="1 btn"  onclick="document.calc.valor.value +='1'">
+    <input type="button" value="P/I" class="parImpar btn" onclick="parImpar()">
+    <input type="button" value="0" class="0 btn" onclick="document.calc.valor.value +='0'">
+    <input type="button" value="00" class="00 btn" onclick="document.calc.valor.value +='00'">
+    <input type="button" value="." class=". btn" onclick="document.calc.valor.value +='.'">
+    <input type="button" value="NP" class="primo btn" onclick="numberPrimo()">
+    <input type="button" value="=" class="= btn" onclick="document.calc.valor.value =eval(calc.valor.value)">
+    <input type="button" value="espaço" class="espaco btn" onclick="document.calc.valor.value +=' '">
+  </form>
+  <div class="rodape"><p>Calculadora feita por Valter Soares</br>
+  Atividade para disciplina: Gestão e Qualidade de Software</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
