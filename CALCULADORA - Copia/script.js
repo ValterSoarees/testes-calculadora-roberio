@@ -117,7 +117,7 @@ const number = document.querySelector('.number').value;
     const number = document.querySelector('.number').value;
     
 
-    if (number.value === "/" && number.value === "0") {
+    if (number.value == "/0") {
       console.log("Não é possível dividir por zero!");
       return;
     } else {
