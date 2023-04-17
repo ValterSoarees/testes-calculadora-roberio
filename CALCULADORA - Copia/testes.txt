@@ -78,6 +78,8 @@
 
 4.9. Verificar se 81/3: igual a 27
 
+4.10. Verificar se 1/0: igual a error
+
 
 5 -  Função Raiz Quadrada
 
@@ -123,6 +125,8 @@
 
 7.5. Verificar se 30 par: igual a par
 
+7.6. Verificar se 0 par: igual a par
+
 8 -  Função Primo 
 
 8.1. Verificar se 5 primo: igual a primo
@@ -133,7 +137,7 @@
 
 8.4. Verificar se 100 primo: igual a não é primo
 
-8.5. Verificar se 0 primo: igual a par
+8.5. Verificar se 0 primo: igual a não é primo
 
 9 -  Função Fatorial
 
@@ -146,3 +150,5 @@
 9.4. Verificar se 0!: igual a 1
 
 9.5. Verificar se 9!: igual a 362880
+
+9.5. Verificar se (-1)!: igual a 1

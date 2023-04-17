@@ -1,46 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Calculadora - Atividade Roberio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Atividade Roberio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="btn--dark"></div>
-  <div class="info"><p><span>ATENÇÃO:</span> Para calcular exponenciação entre</br> com a base e o expoente separados por um espaço</p></div>
-  <form name="calc" class="calculadora">
-    <input type="text" name="valor" class="number">
-    <input type="button" value="c" class="limpar btn" onclick="document.calc.valor.value =''">
-    <input type="button" value="*" class="multiplicar btn" onclick="multiplicacao()">
-    <input type="button" value="/" class="dividir btn" onclick="divisao()">
-    <input type="button" value="n!" class="fatorial btn" onclick="fatorial()">
-    <input type="button" value="7" class="7 btn" onclick="document.calc.valor.value +='7'">
-    <input type="button" value="8" class="8 btn" onclick="document.calc.valor.value +='8'">
-    <input type="button" value="9" class="9 btn" onclick="document.calc.valor.value +='9'">
-    <input type="button" value="-" class="subitracao btn" onclick="subtracao()">
-    <input type="button" value="n^" class="exponenciacao btn" onclick="exponenciacao()">
-    <input type="button" value="4" class="4 btn" onclick="document.calc.valor.value +='4'">
-    <input type="button" value="5" class="5 btn" onclick="document.calc.valor.value +='5'">
-    <input type="button" value="6" class="6 btn" onclick="document.calc.valor.value +='6'">
-    <input type="button" value="+" class="somar btn" onclick="soma()">
-    <input type="button" value="&radic;" class="raiz btn" onclick="raizQuadrada()">
-    <input type="button" value="3" class="3 btn" onclick="document.calc.valor.value +='3'">
-    <input type="button" value="2" class="2 btn" onclick="document.calc.valor.value +='2'">
-    <input type="button" value="1" class="1 btn"  onclick="document.calc.valor.value +='1'">
-    <input type="button" value="P/I" class="parImpar btn" onclick="parImpar()">
-    <input type="button" value="0" class="0 btn" onclick="document.calc.valor.value +='0'">
-    <input type="button" value="00" class="00 btn" onclick="document.calc.valor.value +='00'">
-    <input type="button" value="." class=". btn" onclick="document.calc.valor.value +='.'">
-    <input type="button" value="NP" class="primo btn" onclick="numberPrimo()">
-    <input type="button" value="=" class="= btn" onclick="document.calc.valor.value =eval(calc.valor.value)">
-    <input type="button" value="espaço" class="espaco btn" onclick="document.calc.valor.value +=' '">
-  </form>
-  <div class="rodape"><p>Calculadora feita por Valter Soares</br>
-  Atividade para disciplina: Gestão e Qualidade de Software</p>
-  </div>
-  <script src="script.js"></script>
-  <script src="funcoes.testes.js"></script>
+    <div class="btn--dark"></div>
+
+    <div class="container">
+        <div class="calculadora">
+            <h1>Calculadora</h1>
+            <div class="info1"><label for="num1">Primeiro Número:</label></div>
+            <input type="number" id="num1" class="num1">
+            <div class="info2"><label for="num2">Segundo Número:</label></div>
+            <input type="number" id="num2" class="num2">
+            <div class="fileira">
+                <button onclick="somar()" class="btn">+</button>
+                <button onclick="subtracao()" class="btn">-</button>
+                <button onclick="multiplicacao()" class="btn">*</button>
+            </div>
+            <div class="fileira">
+                <button onclick="divisao()" class="btn">/</button>
+                <button onclick="exponenciacao()" class="btn">n^</button>
+                <button onclick="raizQuadrada()" class="btn">√</button>
+            </div>
+            <div class="fileira">
+                <button onclick="numberPrimo()" class="btn">NP</button>
+                <button onclick="parImpar()" class="btn">P/I</button>
+                <button onclick="fatorial()" class="btn">!</button>
+            </div>
+            <button onclick="clearResult()" class="btn limpar">C</button>
+            <div class="resultado">
+                <label for="resultado">Resultado:</label>
+                <input type="text" id="resultado" disabled>
+            </div>
+        </div>
+        <div class="rodape">
+            <p>Calculadora feita por Valter Soares</br>
+                Atividade para disciplina: Gestão e Qualidade de Software</p>
+        </div>
+    </div>
 </body>
+<script src="script.js"></script>
+<!-- <script src="funcoes.testes.js"></script> -->
+
+<script>
+
+// FUNÇÃO BOTÃO DARK - LIGHT 
+
+    const calculadora = document.querySelector('.calculadora');
+    const btnDark = document.querySelector('.btn--dark');
+
+    btnDark.addEventListener('click', function () {
+        if (calculadora.classList.contains('dark')) {
+            calculadora.classList.remove('dark');
+            this.classList.remove('btn--light');
+            document.querySelector('body').style.background = '#dde1e7';
+            document.querySelector('.rodape').style.color = '#000';
+        } else {
+            calculadora.classList.add('dark');
+            this.classList.add('btn--light');
+            document.querySelector('body').style.background = '#272727';
+            document.querySelector('.rodape').style.color = '#d3dbfc';
+        }
+
+    });
+
+// FUNÇÃO LIMPAR CAMPOS PREENCHIDOS 
+
+    function clearResult() {
+        document.getElementById('resultado').value = '';
+        document.getElementById('num1').value = '';
+        document.getElementById('num2').value = '';
+    }
+
+</script>
+
 </html>

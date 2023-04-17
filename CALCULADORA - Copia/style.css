@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
   box-sizing: border-box;
   user-select: none;
   font-family: 'Ubuntu', sans-serif;
@@ -9,29 +9,28 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
   min-height: 100vh;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #dde1e7;
 }
 
-.calculadora{
+.calculadora {
+  flex-direction: column;
   width: 320px;
   height: 450px;
   padding: 10px;
   text-align: center;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(4, auto);
+  display: flex;
   border-radius: 10px;
   box-shadow: -3px -3px 7px #ffffff73, 2px 2px 3px rgba(94, 104, 121, 0.288);
   margin-left: 3em;
 }
 
-.number{
-  grid-column: 1/6;
+.num1,
+.num2 {
   padding: 5px;
   font-size: 18px;
   color: #000;
@@ -42,62 +41,79 @@ body{
   box-shadow: inset -3px -3px 7px #ffffff73, inset 2px 2px 3px rgba(94, 104, 121, 0.288);
 }
 
-.btn{
-  display: grid;
+.num2 {
+  padding: 5px;
+  font-size: 18px;
+  color: #000;
+  text-align: right;
+  outline: none;
+  border: none;
+  background-color: #dde1e7;
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 2px 2px 3px rgba(94, 104, 121, 0.288);
+}
+
+.fileira {
+  display: flex;
+  padding: 7px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
   place-items: center;
+  justify-content: center;
   color: #000;
   font-size: 18px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
+  width: 40%;
+  height: 6vh;
   background-color: #dde1e7;
   box-shadow: -3px -3px 7px #ffffff73, 2px 2px 3px rgba(94, 104, 121, 0.288);
 }
 
-.limpar{
-  grid-column: 1/3;
+.limpar {
+  width: 100%;
 }
 
-.somar{
-  grid-column: 4/5;
-  grid-row: 4/6;
-}
-
-.btn:focus{
+.btn:focus {
   color: #22a6b3;
   box-shadow: inset -3px -3px 7px #ffffff73, inset 2px 2px 3px rgba(94, 104, 121, 0.288);
 
 }
 
-.espaco{
-  grid-column: 1/6;
+.resultado {
+  display: flex;
+  flex-direction: column;
 }
 
-.info{
-  position: relative;
-  align-items: center;
+#resultado {
+  padding: 5px;
+  font-size: 20px;
+  color: #000;
+  text-align: right;
+  outline: none;
+  border: none;
+  padding-right: 15px;
+  background-color: #f0efef;
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 2px 2px 3px rgba(94, 104, 121, 0.288);
+}
+
+.rodape {
+  margin-top: 2rem;
   justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.info span{
-  font-weight: bold;
-  color: brown;
-}
-
-.rodape{
-position: relative;
-justify-content: center;
-align-items: center;
-text-align: center;
 }
 
 /* efeito dark */
 
-.btn--dark{
+.btn--dark {
   height: 20px;
   width: 40px;
-  background-color: #5372fe;
+  background-color: #d3dbfc;
   border-radius: 50px;
   position: absolute;
   left: 20px;
@@ -105,7 +121,7 @@ text-align: center;
   transition: all .3s linear;
 }
 
-.btn--dark::after{
+.btn--dark::after {
   content: '';
   position: absolute;
   left: 0;
@@ -117,31 +133,41 @@ text-align: center;
   transition: all .3s linear;
 }
 
-.btn--light::after{
+.btn--light::after {
   background-color: #fff;
   transform: translateX(20px);
 }
 
-.dark{
+.dark {
   box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
 }
 
-.dark .number{
+.dark .num1,
+.dark .num2 {
   color: #fff;
   background-color: #272727;
   box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
 }
 
-.dark .btn{
-  color: #5372fe;
+.dark #resultado {
+  color: #fff;
+  background-color: #272727;
+  box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
+}
+
+.dark .btn {
+  color: #d3dbfc;
   background-color: #272727;
   box-shadow: 2px 2px 5px #141414, -5px -5px 10px #212121;
 }
 
-.dark .btn:focus{
-  box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
+.dark h1,
+.dark .info1,
+.dark .info2,
+.dark .resultado {
+  color: #d3dbfc;
 }
 
-.info::after{
-  color: white;
+.dark .btn:focus {
+  box-shadow: inset 2px 2px 5px #141414, inset -5px -5px 10px #212121;
 }
