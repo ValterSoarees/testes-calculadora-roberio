@@ -1,107 +1,87 @@
 // OPERAÇÕES BÁSICAS
 
-function somar() {
-  const num1 = parseInt(document.getElementById("num1").value);
-  const num2 = parseInt(document.getElementById("num2").value);
-  document.getElementById("resultado").value = num1 + num2;
+function somar(a,b) {
+  return a + b
 }
 
-function subtracao() {
-  const num1 = parseInt(document.getElementById("num1").value);
-  const num2 = parseInt(document.getElementById("num2").value);
-  document.getElementById("resultado").value = num1 - num2;
+function subtracao(a,b) {
+  return a - b
 }
 
-function multiplicacao() {
-  const num1 = parseInt(document.getElementById("num1").value);
-  const num2 = parseInt(document.getElementById("num2").value);
-  document.getElementById("resultado").value = num1 * num2;
+function multiplicacao(a,b) {
+  return a * b
 }
 
-function divisao() {
-  const num1 = parseInt(document.getElementById("num1").value);
-  const num2 = parseInt(document.getElementById("num2").value);
+function divisao(a,b) {
 
-  if (num2 == 0) {
-      document.getElementById("resultado").value = "Error"
+  if (b == 0) {
+      return "Error"
   }
   else {
-      document.getElementById("resultado").value = num1 / num2;
+      return a / b;
   }
 }
 
 // EXPONENCIAL 
 
-function exponenciacao() {
-  const num1 = parseInt(document.getElementById("num1").value);
-  const num2 = parseInt(document.getElementById("num2").value);
-
-  if (isNaN(num2)) {
-      document.getElementById("resultado").value = "preencha o 2° número";
-  }
-  else {
-      document.getElementById("resultado").value = Math.pow(num1, num2);
-  }
+function exponenciacao(a,b) {
+      return Math.pow(a, b);
 }
 
 // RAIZ 
 
-function raizQuadrada() {
-  const num1 = parseInt(document.getElementById("num1").value);
-  document.getElementById("resultado").value = Math.sqrt(num1);
+function raizQuadrada(a) {
+  return Math.sqrt(a);
 }
 
 // FATORIAL
 
-function fatorial() {
-  const num1 = parseInt(document.getElementById("num1").value);
+function fatorial(a) {
   let resultado = 1;
-  for (let i = 1; i <= num1; i++) {
+  for (let i = 1; i <= a; i++) {
       resultado *= i;
   }
-  document.getElementById("resultado").value = resultado;
+  return resultado;
 }
 
 // NÚMERO PAR - IMPAR 
 
-function parImpar() {
+function parImpar(a,b) {
 
-  const num1 = parseInt(document.getElementById("num1").value);
-
-  if (num1 % 2 === 0) {
-      document.getElementById("resultado").value = "Par";
+  if (a % 2 === 0) {
+     return "Par";
   } else {
-      document.getElementById("resultado").value = "Ímpar";
+      return "Ímpar";
   }
 }
 
 // NÚMERO PRIMO
 
-function numberPrimo() {
-
-  const num1 = parseInt(document.getElementById("num1").value);
+function numberPrimo(a,b) {
 
   let divisores = 0;
-  for (let i = 1; i <= num1; i++) {
-      if (num1 % i === 0) {
+  for (let i = 1; i <= a; i++) {
+      if (a % i === 0) {
           divisores++;
       }
   }
   if (divisores === 2) {
-      document.getElementById("resultado").value = "Primo";
+      return "Primo";
   } else {
-      document.getElementById("resultado").value = "Não é primo";
+      return "Não é primo";
   }
 }
 
-EXPORTS
+// EXPORTS
 
-module.exports = { somar };
-module.exports = { subtracao };
-module.exports = { multiplicacao };
-module.exports = { divisao };
-module.exports = { fatorial };
-module.exports = { numberPrimo };
-module.exports = { parImpar };
-module.exports = { exponenciacao };
-module.exports = { raizQuadrada };
+module.exports = { 
+  somar,
+  subtracao,
+  multiplicacao,
+  divisao,
+  fatorial,
+  numberPrimo,
+  parImpar,
+  exponenciacao,
+  raizQuadrada
+};
